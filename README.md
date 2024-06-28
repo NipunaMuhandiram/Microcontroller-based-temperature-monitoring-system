@@ -1,6 +1,16 @@
 # Microcontroller-based-temperature-monitoring-system
 microcontroller-based system to display temperature, trigger alarms, and indicate temperature ranges using LEDs and 4Digit Seven Segment display.
 
+## 3D view of v1.5
+![System Diagram](https://github.com/NipunaMuhandiram/Microcontroller-based-temperature-monitoring-system/blob/main/v1.5/snaps/v1_5%20(2).png?raw=true)
+
+![System Diagram](https://github.com/NipunaMuhandiram/Microcontroller-based-temperature-monitoring-system/blob/main/v1.5/snaps/v1_5%20(5).png?raw=true)
+
+## 3D view of v1.4
+
+![System Diagram](https://github.com/NipunaMuhandiram/Microcontroller-based-temperature-monitoring-system/blob/main/v1.4/Snips/v1_4%20(3).png?raw=true)
+
+![System Diagram](https://github.com/NipunaMuhandiram/Microcontroller-based-temperature-monitoring-system/blob/main/v1.4/Schematic/v1.4.png?raw=true)
 ## Overview
 
 This project involves designing a microcontroller-based temperature monitoring system that displays temperature on a 7-segment display, triggers alarms at specified thresholds, and indicates temperature ranges using LEDs. The system will also support switching between Celsius and Fahrenheit displays and toggle between temperature display and range indication modes.
