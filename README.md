@@ -17,7 +17,7 @@ This project involves designing a microcontroller-based temperature monitoring s
 
 ## Components
 
-1. Microcontroller (e.g., Arduino)
+1. Microcontroller (ATmega328p ic)
 2. 7-Segment Display
 3. Push Buttons (5)
 4. LEDs (5 for temperature indication, 1 for alarm)
