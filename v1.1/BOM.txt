@@ -1,0 +1,21 @@
+Atmega 328p ic and ic base
+320ohm -5 
+100ohm -20 
+50ohm - 8
+push button - 7  
+seven segment display 4 digit common cathod -1
+2n2222 or BC547 transistor -5
+led blue -5
+led red -2
+74LS48 decorder -1 ( SN54/74LS48 )
+DC Power Charging Socket Female
+0.64 mm solid core wire - 1m
+solder(iiyam) - 2m
+dot board
+USBasp USBISP 3.3V/5V AVR Programmer
+
+if we are PCB designing
+
+copper board - 1
+Ferric Cloride 
+0.8mm Drill Bit
