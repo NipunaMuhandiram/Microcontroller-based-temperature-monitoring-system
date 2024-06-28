@@ -1,0 +1,90 @@
+#include <avr/io.h>
+#include <util/delay.h>
+
+#define F_CPU 16000000UL
+
+#define l1 PD0  // LED 1
+#define l2 PD1  // LED 2
+#define l3 PD4  // LED 3
+#define l4 PD5  // LED 4
+
+volatile uint8_t count = 5;
+volatile uint8_t brightness1 = 0;
+volatile uint8_t brightness2 = 0;
+volatile uint8_t brightness3 = 0;
+volatile uint8_t brightness4 = 0;
+
+void softwarePWM() {
+    // Calculate brightness values based on count
+    if (count >= 0 && count <= 15) {
+        brightness1 = count * 17;
+        brightness2 = 0;
+        brightness3 = 0;
+        brightness4 = 0;
+    } else if (count >= 16 && count <= 25) {
+        
+        brightness1 = 255;
+        brightness2 = (count * 25) - 400;
+        brightness3 = 0;
+        brightness4 = 0;
+    } else if (count >= 26 && count <= 35) {
+        brightness1 = 255;
+        brightness2 = 255;
+        brightness3 = (count * 25) - 650;
+        brightness4 = 0;
+    } else if (count >= 35 && count <= 40) {
+        brightness1 = 255;
+        brightness2 = 255;
+        brightness3 = 255;
+        brightness4 = (count * 51) - 1785;
+    }
+
+    // Software PWM loop
+    for (uint8_t i = 0; i < 255; i++) {
+        // LED 1
+        if (i < brightness1)
+            PORTD |= (1 << l1);
+        else
+            PORTD &= ~(1 << l1);
+
+        // LED 2
+        if (i < brightness2)
+            PORTD |= (1 << l2);
+        else
+            PORTD &= ~(1 << l2);
+
+        // LED 3
+        if (i < brightness3)
+            PORTD |= (1 << l3);
+        else
+            PORTD &= ~(1 << l3);
+
+        // LED 4
+        if (i < brightness4)
+            PORTD |= (1 << l4);
+        else
+            PORTD &= ~(1 << l4);
+
+        _delay_us(1); // Adjust this delay as needed
+    }
+}
+
+int main(void) {
+    // Set l1, l2, l3, l4 as output
+    DDRD |= (1 << l1) | (1 << l2) | (1 << l3) | (1 << l4);
+
+    // Main loop
+    while (1) {
+        // Software PWM to control brightness based on count
+        softwarePWM();
+
+        // Increment the count for demonstration purposes
+        // count++;
+        // if (count > 60) {
+        //     count = 0;
+        // }
+        
+    }
+
+    return 0;
+}
