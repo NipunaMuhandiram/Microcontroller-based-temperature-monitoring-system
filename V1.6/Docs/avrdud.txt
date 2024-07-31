@@ -1,0 +1,8 @@
+ -p m328P -c usbasp -P usb -U flash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
+
+
+
+avrdude -p m328p -c usbasp -P usb -U lfuse:w:0xE2:m -U hfuse:w:0xD9:m -U efuse:w:0xFF:m -U flash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
+
+
+avrdude -p m328P -c usbasp -P usb -U lfuse:w:0xE2:m -U hfuse:w:0xD9:m -U efuse:w:0xFF:m -U flash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
